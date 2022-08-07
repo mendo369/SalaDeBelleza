@@ -1,0 +1,439 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  --texto: 1.1em;
+  --fuente: "Poppins", sans-serif;
+  --color: #fdcae1;
+  --gradient: linear-gradient(90deg, #018594, #01a78b);
+  /* --gradient: linear-gradient(90deg, #30ac8d, #2fb3a8); */
+  --february-ink: linear-gradient(45deg, #accbee, #e7f0fd);
+  --child-care: linear-gradient(45deg, #f794a4, #fdd6bd);
+  --sol: linear-gradient(90deg, #ff1f01, #ffc700);
+  --aqua-marine: linear-gradient(90deg, #1a2980, #26d0ce);
+}
+
+body {
+  font-size: var(--texto);
+  font-family: var(--fuente);
+}
+
+nav {
+  background-image: var(--gradient);
+  top: 0;
+  width: 100%;
+  height: 10vh;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  color: white;
+}
+
+main {
+  width: 80%;
+  margin: 0px auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+section {
+  margin: 20px 10px 30px;
+  padding: 5px;
+}
+
+/* About US */
+.about {
+  border-radius: 10px;
+  color: white;
+  background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 1)
+    ),
+    url("../images/about-us.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 30vw;
+  font-size: 1.2em;
+}
+
+.about p {
+  width: 50%;
+  float: right;
+  margin: 5% 2%;
+}
+/* ########################## */
+
+.recuadro {
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  border-radius: 1em 0;
+  background-image: var(--gradient);
+  width: fit-content;
+  color: white;
+}
+
+.logo {
+  width: max-content;
+}
+
+.texto-descripcion {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: auto;
+  width: 90%;
+  gap: 2em;
+  margin: auto;
+}
+
+.card {
+  position: relative;
+  width: 20vw;
+  height: 30vw;
+}
+
+.card .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.card .front {
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../images/generalcard.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card .front img {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .front h3 {
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  color: white;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.card .back {
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.3);
+  transform: perspective(600px) rotateY(180deg);
+  background-image: var(--gradient);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
+}
+
+.card .back h3 {
+  font-size: 1.3em;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+.card:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+}
+.card:hover .back {
+  transform: perspective(600px) rotateY(360deg);
+}
+
+.recomendaciones {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 50px 1fr 50px;
+  align-items: center;
+  gap: 1em;
+  background-color: rgba(134, 194, 191, 0.699);
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.arrow {
+  padding: 5px;
+  cursor: pointer;
+  background-image: var(--gradient);
+  border-radius: 50%;
+  margin: auto;
+}
+
+.recomendacion {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.recomendacion--show {
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.recomendacion-cliente-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 30%; /*x y*/
+}
+
+/* Footer */
+
+footer {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  background-image: var(--gradient);
+  padding: 1em;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.map div {
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+}
+
+.map img {
+  border: 4px solid black;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.contactos {
+  height: fit-content;
+  margin: auto 0;
+}
+
+.contactos-list {
+  list-style: none;
+  margin: auto;
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 2em;
+}
+
+.contacto img {
+  width: 3em;
+  height: 3em;
+}
+
+.contacto {
+  text-align: center;
+}
+
+/* Responsive */
+
+@media (max-width: 1270px) {
+  .about {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 1100px) {
+  .about {
+    font-size: 1em;
+    height: 40vw;
+  }
+
+  .card .back {
+    font-size: 1em;
+  }
+
+  footer {
+    display: grid;
+    grid-auto-flow: row;
+  }
+
+  .contactos-list {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 2em;
+    padding: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .about p {
+    font-size: 0.8em;
+  }
+  .card .back {
+    padding: 5px;
+    font-size: 0.9em;
+  }
+
+  .recomendaciones {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .about p {
+    width: 70%;
+    /* font-size: 0.7em; */
+  }
+
+  .card .back {
+    font-size: 0.7em;
+  }
+
+  .recomendacion {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: none;
+  }
+
+  .recomendacion figure {
+    margin: 0 auto;
+  }
+
+  .map div {
+    width: 80%;
+    height: 90%;
+  }
+}
+
+@media (max-width: 630px) {
+  .about p {
+    width: 90%;
+    margin: auto 0;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 1em;
+  }
+
+  .card {
+    width: 30vw;
+    height: 40vw;
+    margin: auto;
+  }
+
+  .card .back {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 530px) {
+  .about p {
+    width: 95%;
+    margin: auto 5px;
+  }
+
+  .recomendacion-cliente-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 500px) {
+  .about p {
+    font-size: 0.7em;
+  }
+
+  .card .front h3 {
+    font-size: 1em;
+  }
+
+  .card .back {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 450px) {
+  main {
+    width: 100%;
+  }
+
+  .card {
+    width: 40vw;
+    height: 50vw;
+  }
+
+  .card .back {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 400px) {
+  .about {
+    height: 50vw;
+  }
+
+  .recomendaciones {
+    padding: 0;
+    grid-template-columns: 40px 1fr 40px;
+  }
+}
+
+@media (max-width: 360px) {
+  .about {
+    height: 60vw;
+  }
+
+  .card .back {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 320px) {
+  .about {
+    height: 65vw;
+  }
+
+  .card {
+    gap: 0.5em;
+  }
+
+  .card {
+    height: 55vw;
+    width: 40vw;
+  }
+}
+
+/* ############ */
